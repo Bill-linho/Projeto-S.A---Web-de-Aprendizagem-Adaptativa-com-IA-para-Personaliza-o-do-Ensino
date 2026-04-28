@@ -9,4 +9,5 @@ router.get("/", autenticar, listarUsuarios);
 // Rota protegida — pegar usuário logado (perfil)
 router.get("/me", autenticar, buscarPerfil);
 
+
 export default router;

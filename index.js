@@ -1,9 +1,12 @@
-import 'dotenv/config'
-import sequelize from './src/config/database.js'
 import express from 'express'
+import sequelize from './src/config/database.js'
+import  router  from './src/routes/user.router.js'
+import 'dotenv/config'
 
 const app = express()
+app.use(express.json());
 
+app.use('/user', router)
 
 sequelize.sync({alter: true}).then(() => {
     app.listen(process.env.SERVE_PORT, () => {

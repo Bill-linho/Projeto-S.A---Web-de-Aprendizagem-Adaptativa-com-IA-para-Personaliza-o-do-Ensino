@@ -1,8 +1,7 @@
-import { defaults } from "pg";
-import sequelize from "../config/database";
+import sequelize from "../config/database.js";
 import { DataTypes } from "sequelize";
 
-export const users = sequelize.define('usuarios',
+export const users = sequelize.define('user',
     {
         id: {
             type: DataTypes.INTEGER,

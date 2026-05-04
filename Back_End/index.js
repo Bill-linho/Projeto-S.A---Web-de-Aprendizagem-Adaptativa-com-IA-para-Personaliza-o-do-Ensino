@@ -8,8 +8,8 @@ import { autenticar } from './src/middlewares/auth.middleware.js'
 const app = express()
 app.use(express.json());
 
-app.use('/user', routerAuth)
-app.use('/auth', autenticar, routerUser)
+app.use('/auth', routerAuth)
+app.use('/user', autenticar, routerUser)
 
 process.on('uncaughtException', (err) =>{
     console.error('erro não tratado', err);

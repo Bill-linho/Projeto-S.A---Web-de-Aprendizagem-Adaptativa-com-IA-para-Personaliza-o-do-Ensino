@@ -1,0 +1,14 @@
+header {
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 14px;
+  opacity: 0.8;
+  text-align: center;
+}

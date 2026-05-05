@@ -4,12 +4,17 @@ import routerAuth from './src/routes/auth.router.js'
 import routerUser from './src/routes/user.router.js'
 import 'dotenv/config'
 import { autenticar } from './src/middlewares/auth.middleware.js'
+import { corsOption } from './src/config/cors.js'
+import { helmetConfig } from './src/config/helmet.js'
+import { limitGlobal , limitLocal } from './src/config/rateLimit.js'
 
 const app = express()
 app.use(express.json());
+app.use(corsOption)
+app.use(helmetConfig)
 
-app.use('/auth', routerAuth)
-app.use('/user', autenticar, routerUser)
+app.use('/auth',limitLocal, routerAuth)
+app.use('/user',limitGlobal, autenticar, routerUser)
 
 process.on('uncaughtException', (err) =>{
     console.error('erro não tratado', err);

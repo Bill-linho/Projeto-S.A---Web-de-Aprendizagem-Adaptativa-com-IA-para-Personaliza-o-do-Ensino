@@ -1,11 +1,9 @@
-import ProductLogin from "../components/productLogin/productLogin.jsx"
-
+import CardLogin from '../components/LoginCard/loginCard.jsx'
 export default function Login() {
-
     return (
         <div>
-            <ProductLogin/>
+            <CardLogin />
         </div>
-        
+
     )
 }

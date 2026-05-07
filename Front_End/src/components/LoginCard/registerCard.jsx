@@ -1,8 +1,11 @@
 import '../style/registerCard.css'
 import Button from '../Button/Button'
 import Input from '../input/input.jsx'
+import { useNavigate } from 'react-router-dom'
 
 export default function RegisterCard() {
+    const navigate = useNavigate()
+
     return (
         <div className="register-container">
             <div className="card-register">
@@ -13,7 +16,7 @@ export default function RegisterCard() {
                     <Input placeholder="Senha" type="password" />
                 </div>
                 <Button className="btn-register">Cadastrar</Button>
-                <Button className="btn-register">Voltar</Button>
+                <Button className="btn-login" onClick={() => navigate('/Login')}>Criar conta</Button>
             </div>
         </div>
     )

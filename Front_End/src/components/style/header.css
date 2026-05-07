@@ -2,16 +2,14 @@
 .header {
   width: 100%;
   padding: 30px 20px;
-  background: linear-gradient(135deg, #4f46e5, #6366f1);
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Conteúdo interno */
 .header-content {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%;
+  margin: 0;
 }
 
 /* Título */

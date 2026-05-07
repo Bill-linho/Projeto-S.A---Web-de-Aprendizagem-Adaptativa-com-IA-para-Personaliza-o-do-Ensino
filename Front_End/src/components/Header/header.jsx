@@ -1,13 +1,13 @@
-import './header.css'
+import '../style/Header.css'
 
 export default function Header() {
 
     return (
-        <div>
-            <header>
-                <h1>TITULO DA PAGINA</h1>
-                <p>Faça seu login para entrar utilizar o aplicativo</p>
-            </header>
-        </div>
+        <header className="header">
+            <div className="header-content">
+                <h1>TÍTULO DA PÁGINA</h1>
+                <p>Faça seu login para utilizar o aplicativo</p>
+            </div>
+        </header>
     )
 }

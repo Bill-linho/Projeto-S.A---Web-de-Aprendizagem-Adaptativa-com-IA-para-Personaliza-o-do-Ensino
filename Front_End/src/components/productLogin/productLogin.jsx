@@ -10,10 +10,7 @@ export default function ProductLogin() {
 
         <Header />
 
-        <div className='cardLogin'>
-
         <CardLogin />
-        </div>
 
         </div>
     )

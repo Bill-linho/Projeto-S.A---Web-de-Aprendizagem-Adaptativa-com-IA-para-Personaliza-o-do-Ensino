@@ -16,6 +16,7 @@ app.use(helmetConfig)
 app.use('/auth',limitLocal, routerAuth)
 app.use('/user',limitGlobal, autenticar, routerUser)
 
+
 process.on('uncaughtException', (err) =>{
     console.error('erro não tratado', err);
 })

@@ -34,3 +34,22 @@ export async function buscarPerfil(req, res) {
     }
     
 }
+
+export async function buscarPerfilUser(req, res) {
+    try {
+        const { id } = req.params
+
+        const usuarios = await userModel.users.findByPk(id)
+
+        if(!usuarios){
+            console.log(usuarios)
+            return res.status(404).json({error: "Usuário não encontrado"})
+        }
+
+        return res.status(200).json(usuarios)
+
+    } catch (error) {
+        return res.status(500).json({error: "Erro ao buscar o usuário"})
+    }
+    
+}

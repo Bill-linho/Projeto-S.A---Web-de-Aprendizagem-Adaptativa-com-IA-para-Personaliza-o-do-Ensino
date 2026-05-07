@@ -6,10 +6,14 @@ import Header from '../src/components/Header/header.jsx'
 function App() {
   return (
     <>
-      <Login/>
- 
-      <Cadastro/> 
+      <Header />
+      
+      <Routes>
+        <Route path='/Login' element={<Login />} />
+        <Route path='/Cadastro' element={<Cadastro />} />
+        <Route path='*' element={<Login />} />
+      </Routes>
     </>
   )
 }
-export default App
+export default App;

@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import RegisterCard from "../components/LoginCard/registerCard.jsx"
-
-export default function Cadastro() {
-=======
 import '../components/style/Cadastro.css'
 import Button from '../components/Button/Button.jsx'
 import Input from '../components/input/input.jsx'
@@ -10,8 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function RegisterCard() {
     const navigate = useNavigate()
-
->>>>>>> 0417c09 (07/05/2026 - 16:26 - G)
+    
     return (
         <div>
             <div>

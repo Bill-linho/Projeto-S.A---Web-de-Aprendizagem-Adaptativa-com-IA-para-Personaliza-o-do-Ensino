@@ -1,7 +1,7 @@
 import Login from './pages/Login.jsx';
 import Cadastro from './pages/Cadastro.jsx';
-import { Route, Routes, Link } from 'react-router-dom';
-import Header from './components/Header/header.jsx'
+import { Route, Routes} from 'react-router-dom';
+import Header from '../src/components/Header/header.jsx'
 
 function App() {
   return (

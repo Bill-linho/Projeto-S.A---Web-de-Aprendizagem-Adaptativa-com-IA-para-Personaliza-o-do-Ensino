@@ -5,8 +5,7 @@ export default function Header() {
     return (
         <header className="header">
             <div className="header-content">
-                <h1>TÍTULO DA PÁGINA</h1>
-                <p>Faça seu login para utilizar o aplicativo</p>
+                <h1>Mentor IA+</h1>
             </div>
         </header>
     )

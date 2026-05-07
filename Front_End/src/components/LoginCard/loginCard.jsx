@@ -1,5 +1,6 @@
 import Input from '../input/input.jsx'
 import '../style/loginCard.css'
+import Button from '../Button/Button.jsx'
 
 export default function CardLogin() {
 
@@ -9,11 +10,12 @@ export default function CardLogin() {
                 <h2>Login</h2>
 
                 <div className="inputs">
-                    <input placeholder="Email" type="email"/>
-                    <input placeholder="Senha" type="password" />
+                    <Input placeholder="Email" type="email"/>
+                    <Input placeholder="Senha" type="password" />
                 </div>
 
-                <button className="btn-login">Entrar</button>
+                <Button className="btn-login">Entrar</Button>
+                <Button className="btn-login">Criar conta</Button>
             </div>
         </div>
 

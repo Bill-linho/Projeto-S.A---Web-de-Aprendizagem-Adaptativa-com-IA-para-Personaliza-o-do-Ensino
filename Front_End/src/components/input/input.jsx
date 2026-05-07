@@ -1,7 +1,7 @@
-export default function Input ({ label, type, value, onChange }) {
+export default function Input ({type, value, onChange,placeholder}) {
 return(  
-<div>
-    <label>{label}</label>
-    <input type={type} value={value} onChange={onChange}/>
+  <div>
+    <input type={type} value={value} onChange={onChange} placeholder={placeholder}/>
   </div>
-);}
+)
+};

@@ -1,4 +1,6 @@
 import '../style/registerCard.css'
+import Button from '../Button/Button'
+import Input from '../input/input.jsx'
 
 export default function RegisterCard() {
     return (
@@ -6,11 +8,12 @@ export default function RegisterCard() {
             <div className="card-register">
                 <h2>Cadastro</h2>
                 <div className="inputs">
-                    <input placeholder="Nome" type="text" />
-                    <input placeholder="Email" type="email" />
-                    <input placeholder="Senha" type="password" />
+                    <Input placeholder="Nome" type="text" />
+                    <Input placeholder="Email" type="email" />
+                    <Input placeholder="Senha" type="password" />
                 </div>
-                <button className="btn-register">Cadastrar</button>
+                <Button className="btn-register">Cadastrar</Button>
+                <Button className="btn-register">Voltar</Button>
             </div>
         </div>
     )

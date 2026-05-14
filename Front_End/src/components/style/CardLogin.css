@@ -1,0 +1,36 @@
+h2{
+    text-align: center;
+    font-size: 32px;
+}
+
+.hero{
+    display: block;
+    text-align: center;
+}
+
+@media (max-width: 576px) {
+
+    h2{
+        font-size: 28px;
+    }
+}
+@media (max-width: 400px) {
+
+    h2{
+        font-size: 22px;
+    }
+}
+.hero input{
+    font-size: 25px;
+    width: 40rem;
+    padding: 8px;
+}
+.hero button{
+    font-size: 20px;
+    width: 8rem;
+    cursor: pointer;
+    color: #252627;
+}
+.hero button:hover{
+    font-size: 22px;
+}

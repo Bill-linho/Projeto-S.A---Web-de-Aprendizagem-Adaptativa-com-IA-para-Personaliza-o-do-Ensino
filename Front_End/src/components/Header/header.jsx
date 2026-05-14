@@ -1,12 +1,12 @@
-import '../style/Header.css'
+import '../style/header.css'
 
 export default function Header() {
 
     return (
         <header className="header">
-            <div className="header-content">
-                <h1>Mentor IA+</h1>
-            </div>
+
+            <h1>Mentor <span>IA+</span></h1>
+
         </header>
     )
 }

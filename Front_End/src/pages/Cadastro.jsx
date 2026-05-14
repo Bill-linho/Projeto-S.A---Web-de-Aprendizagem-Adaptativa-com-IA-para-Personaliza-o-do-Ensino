@@ -37,7 +37,7 @@ export default function Cadastrar() {
 
     return (
         <div>
-            <div>
+            <div className="hero">
                 <h2>Faça seu cadastro para utilizar a plataforma</h2>
                 <div>
                     <Input placeholder="Nome" type="text" onChange={(e)=> setNome(e.target.value)} />

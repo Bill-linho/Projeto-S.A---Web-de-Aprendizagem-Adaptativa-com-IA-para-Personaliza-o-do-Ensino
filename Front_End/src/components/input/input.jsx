@@ -1,3 +1,5 @@
+import '../style/input.css'
+
 export default function Input({ type, value, onChange, placeholder }) {
   return (
     <div>

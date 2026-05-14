@@ -1,0 +1,24 @@
+header{
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 48px;
+}
+header span{
+    color: #4b88a2;
+}
+header h1{
+    color: #252627;
+}
+@media (max-width: 576px) {
+
+    header{
+        text-align: center;
+        font-size: 40px;
+    }
+}
+@media (max-width: 360px) {
+
+    header{
+        font-size: 30px;
+    }
+}

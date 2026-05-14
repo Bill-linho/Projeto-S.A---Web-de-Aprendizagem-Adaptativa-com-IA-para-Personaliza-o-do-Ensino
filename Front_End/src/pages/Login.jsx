@@ -23,20 +23,12 @@ export default function CardLogin() {
 
             console.log(response.data)
 
-            localStorage.setItem(
-                'token',
-                response.data.token
-            )
-
             alert('Login realizado!')
 
         } catch (error) {
             console.log(error)
 
-            alert(
-                error.response?.data?.mensagem
-                || 'Erro ao logar'
-            )
+            alert('Erro ao logar')
         }
     }
 
@@ -47,11 +39,11 @@ export default function CardLogin() {
                 <h2>Faça seu login para entrar na plataforma</h2>
 
                 <div>
-                    <Input placeholder="Email" type="email" value={email} onChange={(e)=>setEmail(e.target).value}/>
-                    <Input placeholder="Senha" type="password" value={senha} onChange={(e)=>setSenha(e.target).value}/>
+                    <Input placeholder="Email" type="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                    <Input placeholder="Senha" type="password" value={senha} onChange={(e)=>setSenha(e.target.value)}/>
                 </div>
 
-                <Button onClick={fazerLogin()}>Entrar</Button>
+                <Button onClick={fazerLogin}>Entrar</Button>
                 <br/>
                 <Button onClick={() => navigate('/Cadastro')}>Criar conta</Button>
             </div>

@@ -23,7 +23,6 @@ export default function CardLogin() {
 
             console.log(response.data)
 
-            // salva token
             localStorage.setItem(
                 'token',
                 response.data.token
@@ -52,7 +51,7 @@ export default function CardLogin() {
                     <Input placeholder="Senha" type="password" value={senha} onChange={(e)=>setSenha(e.target).value}/>
                 </div>
 
-                <Button>Entrar</Button>
+                <Button onClick={fazerLogin()}>Entrar</Button>
                 <br/>
                 <Button onClick={() => navigate('/Cadastro')}>Criar conta</Button>
             </div>

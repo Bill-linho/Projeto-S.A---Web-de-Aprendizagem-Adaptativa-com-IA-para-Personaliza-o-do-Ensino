@@ -17,14 +17,6 @@ app.use('/auth',limitLocal, routerAuth)
 app.use('/user',limitGlobal, autenticar, routerUser)
 
 
-process.on('uncaughtException', (err) =>{
-    console.error('erro não tratado', err);
-})
-
-process.on('unhandledRejection', (err) =>{
-    console.error('promise rejeitada', err)
-});
-
 sequelize.sync({alter: true}).then(() => {
     app.listen(process.env.SERVE_PORT, () => {
         console.log(`Servidor rodando em: localhost:${process.env.SERVE_PORT}`)

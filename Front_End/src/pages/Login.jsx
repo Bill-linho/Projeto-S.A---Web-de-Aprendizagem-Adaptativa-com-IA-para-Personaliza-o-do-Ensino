@@ -1,15 +1,12 @@
-import Input from '../components/input/input.jsx'
+import LoginCard from '../components/LoginCard/loginCard.jsx'
 import '../components/style/Login.css'
-import Button from '../components/Button/Button.jsx'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
 
 const Login = () => {
   return (
     <div>
-      <LoginCard></LoginCard>
+      <LoginCard />
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

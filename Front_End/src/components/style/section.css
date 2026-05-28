@@ -1,0 +1,32 @@
+section {
+    display: flex;
+    gap: 500px;
+    /* espaço entre as divs */
+    justify-content: center;
+    align-items: stretch;
+}
+
+.box-one,
+.box-two {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #173F7A;
+    border-radius: 10px;
+    background-color: rgba(235, 237, 240, 1);
+    color: #173F7A;
+    padding: 25px 35px;
+}
+
+section h2 {
+    color: black;
+}
+
+section button {
+    background-color: rgba(235, 237, 240, 1);
+    color: #173F7A;
+
+}
+section button:hover {
+    cursor: pointer;
+     transform: scale(15.12);
+}

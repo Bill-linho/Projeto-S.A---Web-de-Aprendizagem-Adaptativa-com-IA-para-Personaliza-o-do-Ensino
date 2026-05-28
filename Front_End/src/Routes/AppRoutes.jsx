@@ -5,10 +5,11 @@ import { Route, Routes} from 'react-router-dom';
 import Header from '../components/Header/header.jsx'
 
 export function RouterApp() {
+
   return (
     <>
       <Header />
-      
+
       <Routes>
         <Route path='/Login' element={<Login />} />
         <Route path='/Cadastro' element={<Cadastro />} />

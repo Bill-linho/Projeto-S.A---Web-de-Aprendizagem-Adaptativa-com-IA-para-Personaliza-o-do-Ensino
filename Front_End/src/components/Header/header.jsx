@@ -1,10 +1,15 @@
-import '../style/Header.css'
+import { useNavigate } from 'react-router-dom'
+import '../style/header.css'
 
 export default function Header() {
+      const navigate = useNavigate()
     return (
         <header className="header">
             <div className="header-content">
-                <h1>Mentor IA+</h1>
+              
+                <button className='header-button' onClick={() => { navigate(-1) }} >
+                    Voltar
+                </button>
             </div>
         </header>
     )

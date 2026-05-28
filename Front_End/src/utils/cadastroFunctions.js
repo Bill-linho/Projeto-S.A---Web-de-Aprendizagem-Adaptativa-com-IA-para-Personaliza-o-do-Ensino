@@ -1,4 +1,4 @@
-    async function authCadastro() {
+    export default async function authCadastro() {
         try{
             const response = await api.post(
                 '/auth/cadastro',

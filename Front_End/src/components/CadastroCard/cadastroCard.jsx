@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import authCadastro from '../../utils/cadastroFunctions.js'
-import '../style/cadastro.css'
+import '../style/Cadastro.css'
 
 export default function CadastroCard() {
 

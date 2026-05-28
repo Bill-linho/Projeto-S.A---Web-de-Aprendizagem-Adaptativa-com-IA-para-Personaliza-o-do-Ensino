@@ -6,7 +6,7 @@ import Button from '../Button/Button.jsx'
 
 import authCadastro from '../../utils/cadastroFunctions.js'
 
-export  default function CadastroCard() {
+export default function CadastroCard() {
 
   const navigate = useNavigate()
 
@@ -34,54 +34,59 @@ export  default function CadastroCard() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div>
 
-      <h2>
-        Faça seu cadastro para utilizar a plataforma
-      </h2>
+      <form onSubmit={handleSubmit}>
 
-      <div>
-        <Input
-          placeholder="Nome"
-          type="text"
-          value={nome}
-          onChange={(e) =>
-            setNome(e.target.value)
+        <h2>
+          Faça seu cadastro para utilizar a plataforma
+        </h2>
+
+        <div>
+          <Input
+            placeholder="Nome"
+            type="text"
+            value={nome}
+            onChange={(e) =>
+              setNome(e.target.value)
+            }
+          />
+
+          <Input
+            placeholder="Email"
+            type="email"
+            value={email}
+            onChange={(e) =>
+              setEmail(e.target.value)
+            }
+          />
+
+          <Input
+            placeholder="Senha"
+            type="password"
+            value={senha}
+            onChange={(e) =>
+              setSenha(e.target.value)
+            }
+          />
+        </div>
+
+        <Button type="submit">
+          Cadastrar
+        </Button>
+
+
+      </form>
+      
+        <Button
+          type="button"
+          onClick={() =>
+            navigate('/Login')
           }
-        />
+        >
+          Voltar
+        </Button>
 
-        <Input
-          placeholder="Email"
-          type="email"
-          value={email}
-          onChange={(e) =>
-            setEmail(e.target.value)
-          }
-        />
-
-        <Input
-          placeholder="Senha"
-          type="password"
-          value={senha}
-          onChange={(e) =>
-            setSenha(e.target.value)
-          }
-        />
-      </div>
-
-      <Button type="submit">
-        Cadastrar
-      </Button>
-
-      <Button
-        type="button"
-        onClick={() =>
-          navigate('/Login')
-        }
-      >
-        Voltar
-      </Button>
-
-    </form>
+    </div>
   )
 }

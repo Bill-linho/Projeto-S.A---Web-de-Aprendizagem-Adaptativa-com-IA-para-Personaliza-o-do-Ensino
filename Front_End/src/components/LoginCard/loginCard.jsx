@@ -1,70 +1,64 @@
 import { useState } from 'react'
-import authLogin from '../../utils/loginFunctions'
+import authLogin from '../../utils/loginFunctions.js'
+import Button from '../Button/Button.jsx'
+import { useNavigate } from 'react-router-dom'
+
 
 export default function LoginCard() {
+    const navigate = useNavigate()
 
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
 
     async function handleSubmit(e) {
         e.preventDefault()
+        try {
+            await authLogin(email, senha)
 
-        await authLogin(email, senha)
+            alert('Acesso concedido')
+
+            navigate('/home')
+        } catch (error) {
+            alert('Erro ao entrar!')
+        }
     }
 
     return (
-        <form className="auth-card" onSubmit={handleSubmit}>
+        <div>
 
-            <h2 className="auth-header">Faça seu login para entrar na plataforma</h2>
+            <form className="auth-card" onSubmit={handleSubmit}>
 
-            <div className="form-group">
-                <label className="input-label" htmlFor="email">E-mail:</label>
+                <h2 className="auth-header">Faça seu login para entrar na plataforma</h2>
 
-                <input type="email" id="email" className="input-field" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" required />
-            </div>
+                <div className="form-group">
+                    <label className="input-label" htmlFor="email">E-mail:</label>
 
-            <div className="form-group">
-                <label className="input-label" htmlFor="password"> Senha </label>
+                    <input type="email" id="email" className="input-field" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Digite seu e-mail" required />
+                </div>
 
-                <input type="password" id="password" className="input-field" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Digite sua senha" required/>
-            </div>
+                <div className="form-group">
+                    <label className="input-label" htmlFor="password"> Senha </label>
 
-            <div style={{textAlign: 'left', marginTop: '-8px', marginBottom: '16px' }}>
-                <a href="#" style={{ color: 'var(--text-main-color)', fontSize: '14px', textDecoration: 'underline' }} > Esqueci a senha </a>
-            </div>
+                    <input type="password" id="password" className="input-field" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Digite sua senha" required />
+                </div>
 
-            <button type="submit" className="btn btn-primary"> Entrar </button>
+                <div style={{ textAlign: 'left', marginTop: '-8px', marginBottom: '16px' }}>
+                    <a href="#" style={{ color: 'var(--text-main-color)', fontSize: '14px', textDecoration: 'underline' }} > Esqueci a senha </a>
+                </div>
 
-            <div
-                style={{
-                    position: 'relative',
-                    marginTop: '24px',
-                    textAlign: 'center'
-                }}
-            >
-                <div
-                    style={{
-                        borderTop: '1px solid var(--text-main-color)',
-                        width: '100%'
-                    }}
-                />
+                <button type="submit" className="btn btn-primary"> Entrar </button>
 
-                <span
-                    style={{
-                        position: 'absolute',
-                        top: '-10px',
-                        left: '50%',
-                        transform: 'translateX(-50%)',
-                        backgroundColor: 'var(--card-bg-color)',
-                        color: 'var(--text-main-color)',
-                        fontSize: '14px',
-                        fontWeight: '600'
-                    }}
-                >
-                    Criar conta
+
+            </form>
+            <div style={{ position: 'relative', marginTop: '24px', textAlign: 'center' }}>
+                <div style={{ borderTop: '1px solid var(--text-main-color)', width: '100%' }} />
+
+                <span style={{ position: 'absolute', top: '-10px', left: '50%', transform: 'translateX(-50%)', backgroundColor: 'var(--card-bg-color)', color: 'var(--text-main-color)', fontSize: '14px', fontWeight: '600' }} >
+                    <Button type="button" onClick={() => navigate('/Cadastro')} >
+                        Criar conta
+                    </Button>
                 </span>
             </div>
-
-        </form>
+        </div>
     )
 }

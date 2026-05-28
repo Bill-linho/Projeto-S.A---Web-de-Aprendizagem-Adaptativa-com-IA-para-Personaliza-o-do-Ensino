@@ -2,13 +2,10 @@ import Login from '../pages/Login.jsx';
 import Cadastro from '../pages/Cadastro.jsx';
 import Home from '../pages/Home.jsx'
 import { Route, Routes} from 'react-router-dom';
-import Header from '../components/Header/header.jsx'
 
 export function RouterApp() {
   return (
     <>
-      <Header />
-      
       <Routes>
         <Route path='/Login' element={<Login />} />
         <Route path='/Cadastro' element={<Cadastro />} />

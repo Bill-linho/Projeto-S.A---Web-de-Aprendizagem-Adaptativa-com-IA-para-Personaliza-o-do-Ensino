@@ -1,21 +1,20 @@
-    export default async function authCadastro() {
-        try{
-            const response = await api.post(
-                '/auth/cadastro',
-                {
-                    nome,
-                    email,
-                    senha
-                }
-            )
-            console.log(response.data)
+import { api } from '../services/api.js'
 
-            alert('Usuário criado')
+export default async function authCadastro(nome,email,senha) {
+  try {
+    const response = await api.post(
+      '/auth/cadastro',
+      {
+        nome,
+        email,
+        senha
+      }
+    )
 
-            navigate('/Login')
-        }catch(Vitor){
-            console.log(Vitor)
+    return response.data
 
-            alert('Erro ao cadastrar')
-        }
-    }
+  } catch (erro) {
+    console.log(erro)
+    throw erro
+  }
+}

@@ -1,15 +1,13 @@
-import { useNavigate } from 'react-router-dom'
 import '../style/header.css'
+import LogoDoLogo from '../Logo/roboManeiro.jsx'
 
 export default function Header() {
       const navigate = useNavigate()
     return (
         <header className="header">
-            <div className="header-content">
-              
-                <button className='header-button' onClick={() => { navigate(-1) }} >
-                    Voltar
-                </button>
+            <div className="header-content">    
+                <LogoDoLogo />
+                <h1>Mentor IA+</h1>
             </div>
         </header>
     )

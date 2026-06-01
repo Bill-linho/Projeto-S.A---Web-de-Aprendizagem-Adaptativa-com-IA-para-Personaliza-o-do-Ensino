@@ -1,119 +1,130 @@
-/* src/Auth.css */
-
-:root {
-  /* Cores baseadas nas imagens */
-  --bg-color: #ffffff;
-  --card-bg-color: #F4F6F8; /* Cinza muito claro */
-  --text-main-color: #213054; /* Azul escuro */
-  --text-muted-color: #9CA3AF;
-  --input-border-color: #D1D5DB;
-  --primary-button-color: #F19C38; /* Laranja */
-  --secondary-button-color: #213054; /* Azul escuro */
-  --logo-blue-color: #1E4EDD;
-  
-  /* Fontes e espaçamentos */
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --base-radius: 8px;
-  --input-radius: 4px;
-}
-
-body, html {
+* {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color);
-  font-family: var(--font-family);
-  height: 100%;
-}
-
-/* Centraliza o card na tela */
-.auth-page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* O "card" arredondado das telas */
-.auth-card {
-  background-color: var(--card-bg-color);
-  padding: 40px;
-  border-radius: var(--base-radius);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Sombra suave */
-  width: 100%;
-  max-width: 480px; /* Largura ajustada */
   box-sizing: border-box;
 }
 
-/* Cabeçalho do formulário */
+:root {
+  --primary-blue: #173d7a;
+  --primary-orange: #f29a2e;
+  --background: #f3f3f3;
+  --border-color: #b8b8b8;
+  --input-bg: #f7f7f7;
+}
+
+body {
+  background-color: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-container {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-card {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
 .auth-header {
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 24px;
-  color: var(--text-main-color);
-  font-size: 20px;
+  color: var(--primary-blue);
+  font-size: 18px;
+  margin-bottom: 40px;
   font-weight: 700;
 }
 
-/* Agrupamento de labels e inputs */
 .form-group {
-  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 22px;
 }
 
 .input-label {
-  display: block;
-  margin-bottom: 6px;
-  color: var(--text-main-color);
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #111;
 }
 
 .input-field {
   width: 100%;
-  padding: 12px;
-  border: 1px solid var(--input-border-color);
-  border-radius: var(--input-radius);
-  box-sizing: border-box;
-  font-size: 16px;
-  color: var(--text-main-color);
-  transition: border-color 0.3s ease;
-}
-
-.input-field::placeholder {
-  color: var(--text-muted-color);
+  height: 46px;
+  border-radius: 30px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg);
+  padding: 0 22px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.2s;
 }
 
 .input-field:focus {
-  border-color: var(--primary-button-color);
-  outline: none;
+  border-color: var(--primary-blue);
 }
 
-/* Estilo geral dos botões */
-.btn {
-  padding: 12px;
-  border-radius: var(--input-radius);
-  font-size: 16px;
+.input-field::placeholder {
+  color: #8c8c8c;
+}
+
+.forgot-password {
+  text-align: left;
+  margin-top: -5px;
+  margin-bottom: 28px;
+}
+
+.forgot-password a {
+  color: var(--primary-blue);
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+.btn-primary {
+  width: 250px;
+  height: 50px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 14px;
+  background-color: var(--primary-orange);
+  color: white;
+  font-size: 28px;
   font-weight: bold;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.03);
+}
+
+.create-account-container {
+  position: relative;
+  margin-top: 35px;
+  text-align: center;
+}
+
+.create-account-line {
+  border-top: 1px solid var(--primary-blue);
   width: 100%;
+}
+
+.create-account-content {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--background);
+  padding: 0 14px;
+}
+
+.create-account-button {
+  background: none;
   border: none;
-  margin-top: 10px;
-}
-
-.btn:hover {
-  opacity: 0.85;
-}
-
-/* Botão Laranja Sólido (Confirmar/Entrar) */
-.btn-primary {
-  background-color: var(--primary-button-color);
-  color: #ffffff;
-}
-
-/* Botão Azul com Borda (Voltar) */
-.btn-secondary {
-  background-color: transparent;
-  color: var(--secondary-button-color);
-  border: 1px solid var(--secondary-button-color);
+  color: var(--primary-blue);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
 }

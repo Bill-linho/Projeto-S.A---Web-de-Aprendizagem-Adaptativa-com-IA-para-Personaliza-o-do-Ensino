@@ -2,6 +2,7 @@ import '../style/header.css'
 import LogoDoLogo from '../Logo/roboManeiro.jsx'
 
 export default function Header() {
+      const navigate = useNavigate()
     return (
         <header className="header">
             <div className="header-content">    

@@ -1,9 +1,11 @@
 import '../style/section.css'
+import Header from '../Header/header.jsx'
 
 export default function Section() {
     
     return(
-    <section>
+
+        <section>
 
         <div className='box-one'>
             <h1>1</h1>

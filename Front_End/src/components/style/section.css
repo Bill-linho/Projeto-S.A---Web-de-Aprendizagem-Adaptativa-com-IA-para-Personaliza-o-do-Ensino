@@ -1,7 +1,6 @@
 section {
     display: flex;
     gap: 500px;
-    /* espaço entre as divs */
     justify-content: center;
     align-items: stretch;
 }
@@ -28,5 +27,5 @@ section button {
 }
 section button:hover {
     cursor: pointer;
-     transform: scale(15.12);
+     transform: scale(1.12);
 }

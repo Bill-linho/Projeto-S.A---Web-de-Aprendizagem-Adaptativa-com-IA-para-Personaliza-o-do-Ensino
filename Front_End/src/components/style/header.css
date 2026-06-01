@@ -2,6 +2,7 @@
     font-family: sans-serif;
     display: flex;
     padding: 10px 80px;
+    width: 100vw;
     background-color: rgb(7, 15, 133);
     color: white;
     justify-content: end;

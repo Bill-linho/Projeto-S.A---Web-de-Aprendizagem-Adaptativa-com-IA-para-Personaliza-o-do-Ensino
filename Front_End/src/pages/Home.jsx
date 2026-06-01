@@ -1,5 +1,6 @@
 import Aside from '../components/aside/aside'
 import Section from '../components/section/section'
+import Header from '../components/Header/header'
 import '../components/style/home.css'
 
 

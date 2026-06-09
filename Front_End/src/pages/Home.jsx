@@ -5,20 +5,18 @@ import '../components/style/home.css'
 
 
 export default function homeApp() {
+    
     return (
         <div className="layout">
             <Aside />
             <Header />
-            
 
             <div className='home-container'>
-
-
-            <Section></Section>
+                <Section></Section>
 
             </div>
- 
-  
+
+
         </div>
     )
 }

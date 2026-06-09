@@ -33,8 +33,7 @@ export async function login(req, res) {
         const usuarios = await model.users.findOne({ where: { email} })
         
         if(!usuarios){
-            return res.status(404).json({error: "Usúario não encontrado" })
-        }
+            return res.status(404).json({error: "Usúario não encontrado" })        }
 
         const senhaValida = await bcrypt.compare(senha,usuarios.senha)
 

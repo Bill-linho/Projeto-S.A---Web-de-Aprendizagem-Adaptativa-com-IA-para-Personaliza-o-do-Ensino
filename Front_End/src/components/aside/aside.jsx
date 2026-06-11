@@ -1,6 +1,6 @@
 import '../style/Aside.css'
 
-export default function Aside() {
+export default function Aside({ setView }) {
 
     return (
         <aside className="aside">
@@ -9,10 +9,10 @@ export default function Aside() {
 
             <div className='lista-aside'>
 
-                <button className='btns'>Inicio</button>
-                <button className='btns'>Minhas trilhas</button>
-                <button className='btns'>Mentor IA</button>
-                <button className='btns'>Perfil</button>
+                <button className='btns' onClick={() => setView && setView('home')}>Inicio</button>
+                <button className='btns' onClick={() => setView && setView('trilhas')}>Minhas trilhas</button>
+                <button className='btns' onClick={() => setView && setView('chat')}>Mentor IA</button>
+                <button className='btns' onClick={() => setView && setView('perfil')}>Perfil</button>
 
             </div>
 

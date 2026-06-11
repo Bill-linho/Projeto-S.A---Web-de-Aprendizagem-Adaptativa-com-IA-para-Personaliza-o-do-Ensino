@@ -78,7 +78,7 @@ export default function LoginCard() {
       </div>
 
       <div className="forgot-password">
-        <a href="#">
+        <a href="https://youtu.be/dQw4w9WgXcQ">
           Esqueci a senha
         </a>
       </div>

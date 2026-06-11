@@ -80,3 +80,13 @@ width: 1350px;
 .section-input-two input{
     width: 96.075%;
 }
+.profile{
+    text-align: center;
+}
+.profile img{
+    max-height: 600px;
+    border: 1px black solid;
+}
+.profile img:hover{
+ transform: scale(1.02); 
+}

@@ -11,7 +11,7 @@ export default function Aside() {
             <div className='lista-aside'>
 
                 <Link to="/home"><button className='btns'>Inicio</button></Link>
-                <button className='btns'>Minhas trilhas</button>
+                <Link to="/trilhas"><button className='btns'>Minhas trilhas</button></Link>
                 <Link to="/chat"><button className='btns'>Mentor IA</button></Link>
                 <Link to="/profile"><button className='btns'>Perfil</button></Link>
 

@@ -4,6 +4,7 @@ import Home from '../pages/Home.jsx'
 import Chat from '../components/Chat/Chat.jsx'
 import Profile from '../components/Profile/Profile.jsx'
 import Layout from '../components/Layout/Layout.jsx'
+import Trilhas from '../components/Trilhas/Trilhas.jsx';
 import { Route, Routes} from 'react-router-dom';
 import PrivateRoute from '../components/PrivateRoute/PrivateRoute.jsx';
 import { Navigate } from 'react-router-dom'
@@ -20,6 +21,7 @@ export function RouterApp() {
           <Route path='/home' element={<Home />} />
           <Route path='/chat' element={<Chat />} />
           <Route path='/profile' element={<Profile />} />
+          <Route path='/trilhas' element={<Trilhas />} />
           <Route path='/' element={<Navigate to="/home" replace />} />
         </Route>
 

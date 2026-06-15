@@ -1,0 +1,23 @@
+/* Layout principal: mantém Aside fixo e desloca a área principal */
+.layout { display: flex; }
+
+.main-area {
+	margin-left: 15vw; /* corresponde à largura do aside */
+	min-height: 100vh;
+	background: #f8fafc;
+	width: calc(100% - 15vw);
+	box-sizing: border-box;
+}
+
+.home-container {
+	padding: 24px;
+}
+
+/* Cabeçalho */
+.header { background: white; padding: 12px 20px; display:flex; align-items:center; border-bottom:1px solid #e6e9ee }
+
+@media (max-width: 800px) {
+	.aside { position: relative; width: 100%; height: auto }
+	.main-area { margin-left: 0; width: 100% }
+}
+

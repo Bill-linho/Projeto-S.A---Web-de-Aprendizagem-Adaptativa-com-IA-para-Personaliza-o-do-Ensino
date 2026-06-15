@@ -10,7 +10,7 @@ export default async function authLogin(email, senha) {
       },
     )
     const token = response.data.token
-
+    
     localStorage.setItem('token', token)
     return response
   } catch (erro) {

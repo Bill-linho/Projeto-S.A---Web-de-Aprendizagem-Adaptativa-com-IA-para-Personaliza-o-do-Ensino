@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { listarUsuarios, buscarPerfil, buscarPerfilUser} from "../controllers/user.controller.js";
+import { listarUsuarios, buscarPerfil, buscarPerfilUser, atualizarPerfil } from "../controllers/user.controller.js";
 import { autenticar } from "../middlewares/auth.middleware.js";
 
 const router = Router();
@@ -7,6 +7,8 @@ const router = Router();
 router.get("/", autenticar, listarUsuarios);
 
 router.get("/me", autenticar, buscarPerfil);
+
+router.put('/me', autenticar, atualizarPerfil)
 
 router.get('/:id', autenticar, buscarPerfilUser)
 

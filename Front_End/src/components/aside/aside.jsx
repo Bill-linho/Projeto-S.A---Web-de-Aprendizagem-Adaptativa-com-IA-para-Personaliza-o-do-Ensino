@@ -1,4 +1,5 @@
 import '../style/Aside.css'
+import { Link } from 'react-router-dom'
 
 export default function Aside() {
 
@@ -9,10 +10,10 @@ export default function Aside() {
 
             <div className='lista-aside'>
 
-                <button className='btns'>Inicio</button>
+                <Link to="/home"><button className='btns'>Inicio</button></Link>
                 <button className='btns'>Minhas trilhas</button>
-                <button className='btns'>Mentor IA</button>
-                <button className='btns'>Perfil</button>
+                <Link to="/chat"><button className='btns'>Mentor IA</button></Link>
+                <Link to="/profile"><button className='btns'>Perfil</button></Link>
 
             </div>
 

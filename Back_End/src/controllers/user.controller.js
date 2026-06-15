@@ -53,3 +53,27 @@ export async function buscarPerfilUser(req, res) {
     }
     
 }
+
+export async function atualizarPerfil(req, res) {
+    try {
+        const { id } = req.usuario
+        const { nome, email, senha } = req.body
+
+        const updateData = { }
+        if (nome) updateData.nome = nome
+        if (email) updateData.email = email
+        if (senha) {
+            const hashed = await bcrypt.hash(senha, 10)
+            updateData.senha = hashed
+        }
+
+        await userModel.users.update(updateData, { where: { id } })
+
+        const usuarioAtualizado = await userModel.users.findOne({ where: { id }, attributes: { exclude: ['senha'] } })
+
+        return res.status(200).json(usuarioAtualizado)
+    } catch (error) {
+        console.error('Erro atualizarPerfil:', error)
+        return res.status(500).json({ error: 'Erro ao atualizar perfil' })
+    }
+}

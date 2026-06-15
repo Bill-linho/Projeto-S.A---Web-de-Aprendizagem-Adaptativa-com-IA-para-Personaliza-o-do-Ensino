@@ -1,0 +1,7 @@
+.chat-root { padding: 16px; }
+.chat-window { height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 8px; background: #fff; }
+.chat-input-row { display:flex; gap:8px; margin-top:8px }
+.chat-input-row input { flex:1; padding:8px }
+.chat-message { margin:6px 0; max-width:70%; padding:8px; border-radius:8px }
+.chat-message.user { margin-left:auto; background:#d1e7dd }
+.chat-message.bot { background:#f1f3f5 }

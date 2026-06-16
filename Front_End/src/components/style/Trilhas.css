@@ -1,0 +1,10 @@
+.box-one,
+.box-two {
+    width: 300px;
+    height: 200px;
+    border: 2px solid #173F7A;
+    border-radius: 10px;
+    background-color: rgba(235, 237, 240, 1);
+    color: #173F7A;
+    padding: 28px 35px;
+}

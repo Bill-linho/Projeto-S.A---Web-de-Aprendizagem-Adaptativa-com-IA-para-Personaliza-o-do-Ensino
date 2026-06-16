@@ -1,50 +1,99 @@
-import { useEffect, useState } from 'react'
-import Message from './Message'
-import { getMessages, sendMessage } from '../../services/chatService'
-import '../../components/style/Chat.css'
+import { useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { perguntarGemini } from "../../services/geminiService.js";
 
 export default function Chat() {
-  const [messages, setMessages] = useState([])
-  const [text, setText] = useState('')
+  const [texto, setTexto] = useState("");
+  const [mensagens, setMensagens] = useState([]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    let mounted = true
-    getMessages().then((res) => {
-      if (mounted) setMessages(res.data || [])
-    }).catch(() => {})
+  async function enviarMensagem() {
+    if (!texto.trim()) return;
 
-    return () => { mounted = false }
-  }, [])
+    const pergunta = texto;
 
-  const handleSend = async () => {
-    if (!text.trim()) return
+    setMensagens((prev) => [
+      ...prev,
+      {
+        texto: pergunta,
+        tipo: "usuario",
+      },
+    ]);
+
+    setTexto("");
+    setLoading(true);
+
     try {
-      const res = await sendMessage({ text })
-      setMessages((m) => [...m, res.data])
-      setText('')
-    } catch (err) {
-      console.error(err)
-      alert('Erro ao enviar mensagem')
+      const resposta = await perguntarGemini(pergunta);
+
+      setMensagens((prev) => [
+        ...prev,
+        {
+          texto: resposta,
+          tipo: "ia",
+        },
+      ]);
+    } catch (erro) {
+      console.error(erro);
+
+      setMensagens((prev) => [
+        ...prev,
+        {
+          texto: "Erro ao conversar com a IA.",
+          tipo: "ia",
+        },
+      ]);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      enviarMensagem();
     }
   }
 
   return (
-    <div className="chat-root">
-      <h2>Chat com Mentor IA</h2>
-      <div className="chat-window">
-        {messages.map((msg, idx) => (
-          <Message key={idx} message={msg} />
+    <div className="chat-container">
+      <h2>MentorIA</h2>
+
+      <div className="chat-messages">
+        {mensagens.map((msg, index) => (
+          <div
+            key={index}
+            className={`message ${
+              msg.tipo === "usuario"
+                ? "message-user"
+                : "message-ai"
+            }`}
+          >
+            <ReactMarkdown>
+              {msg.texto}
+            </ReactMarkdown>
+          </div>
         ))}
+
+        {loading && (
+          <div className="message message-ai">
+            Digitando...
+          </div>
+        )}
       </div>
 
-      <div className="chat-input-row">
+      <div className="chat-input">
         <input
-          value={text}
-          onChange={(e) => setText(e.target.value)}
-          placeholder="Escreva sua mensagem..."
+          type="text"
+          value={texto}
+          placeholder="Digite sua pergunta..."
+          onChange={(e) => setTexto(e.target.value)}
+          onKeyDown={handleKeyDown}
         />
-        <button onClick={handleSend}>Enviar</button>
+
+        <button onClick={enviarMensagem}>
+          Enviar
+        </button>
       </div>
     </div>
-  )
+  );
 }

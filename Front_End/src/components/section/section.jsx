@@ -1,18 +1,13 @@
 import { useState } from 'react'
 import Chat from '../Chat/Chat.jsx'
+import Button from '../Button/Button.jsx'
+import { useNavigate } from 'react-router-dom'
 import '../style/section.css'
 
 export default function Section() {
-    const [chatMentor, setChatMentor] = useState(false)
-
+    const navigate = useNavigate()
     return (
         <>
-
-            {chatMentor ? (
-                <div className='section-two'>
-                    <Chat />
-                </div>
-            ) : (
                 <section>
 
                     <div className='box-one'>
@@ -26,15 +21,13 @@ export default function Section() {
                         <h2>Precisa de ajuda?</h2>
 
 
-                        <button onClick={() => setChatMentor(!chatMentor)}>
+                        <Button onClick={() =>navigate('/chat')}>
                             Falar com a mentoria IA
-                        </button>
+                        </Button>
 
                     </div>
 
                 </section>
-
-            )};
         </>
     )
 }

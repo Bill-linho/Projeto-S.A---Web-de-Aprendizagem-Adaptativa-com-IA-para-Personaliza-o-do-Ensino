@@ -8,27 +8,20 @@ export const trilha = sequelize.define('trilha',
             primaryKey: true,
             autoIncrement: true
         },
-        nome: DataTypes.STRING,
-        area: DataTypes.STRING,
-        nivelAtual: DataTypes.INTEGER,
-        nivelObjetivo: DataTypes.INTEGER,
-        status: DataTypes.STRING,
-
-        usuarioId: {
-            type: DataTypes.INTEGER,
+        nome: { 
+            type: DataTypes.STRING, 
             allowNull: false,
-            references: {
-                model: 'Usuarios',
-                key: 'id'
-            }
-        }
-
+        },
+        area: {
+            type:DataTypes.STRING,
+            allowNull: false,
+        },
+        nivelAtual:{ 
+            type:DataTypes.NUMBER,
+            allowNull: false,
+        },
+        nivelObjetivo:{ 
+            type:DataTypes.INTEGER,
+            allowNull: false,
+        },
     });
-
-Usuario.hasMany(trilha, {
-    foreignKey: 'usuarioId'
-})
-
-Competencia.belongsTo(users, {
-    foreignKey: 'usuarioId'
-})

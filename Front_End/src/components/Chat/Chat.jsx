@@ -1,6 +1,8 @@
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { perguntarGemini } from "../../services/geminiService.js";
+import LogoRobo from "../Logo/roboManeiro.jsx";
+import '../style/Chat.css'
 
 export default function Chat() {
   const [texto, setTexto] = useState("");
@@ -56,17 +58,18 @@ export default function Chat() {
 
   return (
     <div className="chat-container">
-      <h2>MentorIA</h2>
+
+      <h2><LogoRobo width="50px" height="50px" />Mentor <span id="mensagem">IA+ </span></h2>
+
 
       <div className="chat-messages">
         {mensagens.map((msg, index) => (
           <div
             key={index}
-            className={`message ${
-              msg.tipo === "usuario"
-                ? "message-user"
-                : "message-ai"
-            }`}
+            className={`message ${msg.tipo === "usuario"
+              ? "message-user"
+              : "message-ai"
+              }`}
           >
             <ReactMarkdown>
               {msg.texto}

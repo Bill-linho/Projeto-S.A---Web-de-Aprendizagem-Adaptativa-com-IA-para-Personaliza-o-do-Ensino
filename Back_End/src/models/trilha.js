@@ -12,16 +12,22 @@ export const trilha = sequelize.define('trilha',
             type: DataTypes.STRING, 
             allowNull: false,
         },
-        area: {
-            type:DataTypes.STRING,
-            allowNull: false,
-        },
         nivelAtual:{ 
-            type:DataTypes.NUMBER,
+            type:DataTypes.ENUM(
+                "INICIANTE",
+                "INTERMEDIARIO",
+                "AVANCADO"
+            ),
+            defaultValue:"INICIANTE",
             allowNull: false,
         },
         nivelObjetivo:{ 
-            type:DataTypes.INTEGER,
+            type:DataTypes.ENUM(
+                "INICIANTE",
+                "INTERMEDIARIO",
+                "AVANCADO"
+            ),
+            defaultValue:"INTERMEDIARIO",
             allowNull: false,
         },
     });

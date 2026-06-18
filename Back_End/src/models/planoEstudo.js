@@ -11,7 +11,7 @@ export const planoEstudo = sequelize.define('planoEstudo', {
         type: DataTypes.STRING,
     },
     descricao:{
-        type: DataTypes.TEXT
+        type: DataTypes.TEXT,
     },
     TempoEstimado:{
         type: DataTypes.FLOAT,
@@ -24,7 +24,7 @@ export const planoEstudo = sequelize.define('planoEstudo', {
         defaultValue: 0
     },
     status:{
-        type: DataTypes.INTEGER,
+        type: DataTypes.ENUM,
         defaultValue: "NAO_INICIADO"
     }
 })

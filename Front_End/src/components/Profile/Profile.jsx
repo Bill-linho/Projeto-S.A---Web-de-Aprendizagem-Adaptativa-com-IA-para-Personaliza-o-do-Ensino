@@ -10,6 +10,7 @@ import Avatar4 from '../../assets/avatar4.png'
 import Avatar5 from '../../assets/avatar5.png'
 import Avatar6 from '../../assets/avatar6.png'
 import Avatar7 from '../../assets/avatar7.png'
+import Avatar8 from '../../assets/avatar8.png'
 
 export default function Profile() {
   const [profile, setProfile] = useState({ nome: '', email: '', avatar: null })
@@ -23,6 +24,7 @@ export default function Profile() {
     5: Avatar5,
     6: Avatar6,
     7: Avatar7,
+    8: Avatar8,
   }
 
   useEffect(() => {
@@ -33,16 +35,21 @@ export default function Profile() {
 
   const handleSave = async () => {
     try {
-      await updateProfile(profile)
+      const res = await updateProfile(profile)
+
+      setProfile(res.data)
+
+      window.dispatchEvent(
+        new Event('profileUpdated')
+      )
+
       alert('Perfil atualizado')
+
     } catch (err) {
       console.error(err)
-      alert('Erro ao atualizar perfil')
     }
   }
-
-
-
+  
   return (
     <div className="profile-root">
       <div className="profile-page-header">
@@ -122,24 +129,27 @@ export default function Profile() {
 
                   <div className="avatar-grid">
 
+
                     {Object.entries(avatars).map(([id, img]) => (
                       <button
                         key={id}
                         type="button"
-                        className={`avatar-option ${Number(profile.avatar) === Number(id)
+                        className={`avatar-option ${profile.avatar === Number(id)
                           ? 'selected'
                           : ''
                           }`}
                         onClick={() =>
-                          setProfile({
-                            ...profile,
+                          setProfile(prev => ({
+                            ...prev,
                             avatar: Number(id)
-                          })
+                          }))
                         }
                       >
                         <img src={img} alt={`Avatar ${id}`} />
                       </button>
                     ))}
+
+
 
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import CadastroCard from '../components/CadastroCard/cadastroCard.jsx'
+import CadastroCard from '../components/cards/CadastroCard/cadastroCard.jsx'
 import Header from '../components/Header/header.jsx'
 
 export default function Cadastrar() {

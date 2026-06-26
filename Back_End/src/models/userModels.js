@@ -22,6 +22,12 @@ export const users = sequelize.define('user',
             type: DataTypes.STRING,
             allowNull: false
         },
+        avatar: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 1
+
+        },
         ativo: {
             type: DataTypes.BOOLEAN,
             defaultValue: true

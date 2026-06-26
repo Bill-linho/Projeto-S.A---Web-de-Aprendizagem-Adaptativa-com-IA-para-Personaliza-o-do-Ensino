@@ -1,45 +1,115 @@
 .aside {
-    position: fixed;
-    z-index: 1;
-    width: 15vw;
-    height: 100vh;
-    background-color: rgba(235, 237, 240, 1);
-    color: white;
-    padding: 20px;
+  position: fixed;
+  z-index: 1;
+  width: 15vw;
+  height: 100vh;
+  background-color: rgba(235, 237, 240, 1);
+  color: white;
+  padding: 20px;
+}
+
+#left, #btn-left {
+  background-color: rgba(235, 237, 240, 1);
+  color: black;
+  height: 25px;
+  border: none;
+  cursor: pointer;
+}
+#btn-left:hover{
+  transform: scale(1.10);
 }
 
 .home-container {
-    padding: 20px; 
+  padding: 20px;
 }
 
 .lista-aside {
-    display: flex;
-    flex-direction: column;
-    border: none;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-top: 50px;
 }
 
 .btns {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding: 15px;
-    border: none;
-    background-color: rgba(235, 237, 240, 1);
-    color: #173F7A;
-    font-size: 32px;
-    padding: 20px 25px;
-    cursor: pointer;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  padding: 15px;
+  border: none;
+  background-color: rgba(235, 237, 240, 1);
+  color: #173F7A;
+  font-size: 32px;
+  padding: 20px 25px;
+  cursor: pointer;
 }
 
 .btns:hover {
-    transform: scale(1.12);
-    background-color: rgba(23, 63, 122, 0.12);
+  transform: scale(1.12);
+  background-color: rgba(23, 63, 122, 0.12);
 }
 
 aside h1 {
-    color: #173F7A;
-    text-align: end;
+  color: #173F7A;
+  display: flex;
+  font-size: 35px;
 }
 
 .span-color {
-    color: #F59E0B;
+  color: blue
+}
+
+.aside-top {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  margin-bottom: 30px;
+}
+
+.aside-profile {
+  margin-top: 8px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 8px;
+
+  text-decoration: none;
+
+  color: inherit;
+}
+
+.aside-avatar {
+  width: 140px;
+
+  height: 140px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  background:
+    rgba(235, 237, 240, 1);
+
+  padding: 6px;
+
+  border: 3px solid #dfe5ec;
+
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, .08);
+
+  transition: .2s;
+}
+
+.aside-avatar:hover {
+  transform: scale(1.05);
+}
+
+.aside-profile span {
+  font-size: 20px;
+  color: #173F7A;
+  font-weight: 600;
 }

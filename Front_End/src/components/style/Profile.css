@@ -1,11 +1,287 @@
-.profile-root { padding:16px }
-.profile-top { display:flex; gap:16px; align-items:center }
-.profile-avatar { width:120px; height:120px; border-radius:999px; object-fit:cover; border:2px solid #e6e9ee }
-.profile-info { flex:1 }
-.profile-form { display:flex; flex-direction:column; gap:8px; max-width:560px }
-.profile-form input { padding:8px }
 
-@media (max-width:800px){
-	.profile-top { flex-direction:column; align-items:flex-start }
-	.profile-avatar { width:96px; height:96px }
+.profile-root {
+  min-height: 100%;
+  padding: 40px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-page-header {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  margin-bottom: 32px;
+}
+
+.profile-page-header h2 {
+  margin-top: 18px;
+  margin-bottom: 8px;
+
+  font-size: 34px;
+
+  color: #1f2937;
+}
+
+.profile-page-header p {
+  margin: 0;
+
+  color: #7a8699;
+
+  font-size: 15px;
+}
+
+.profile-avatar {
+  width: 170px;
+  height: 170px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 5px solid #f2f5f9;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.08);
+
+  transition: .25s;
+}
+#avatar-nome{
+  color:  #173F7A;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.03);
+}
+
+.profile-card {
+  width: 100%;
+  max-width: 720px;
+
+  background: white;
+
+  border: 1px solid #e6e9ee;
+
+  border-radius: 20px;
+
+  padding: 32px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.05);
+}
+
+.profile-details {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 24px;
+}
+
+.profile-item {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  padding-bottom: 18px;
+
+  border-bottom: 1px solid #edf0f5;
+}
+
+.profile-label {
+  font-size: 13px;
+
+  color: #7a8699;
+
+  text-transform: uppercase;
+
+  letter-spacing: .06em;
+}
+
+.profile-value {
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #1f2937;
+}
+
+.profile-form {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #374151;
+}
+
+.form-group input {
+  height: 50px;
+
+  padding: 0 16px;
+
+  border: 1px solid #d8dde6;
+
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  transition: .2s;
+}
+
+.form-group input:focus {
+  outline: none;
+
+  border-color: #4f46e5;
+
+  box-shadow:
+    0 0 0 4px rgba(79, 70, 229, .15);
+}
+
+/* BOTÕES */
+
+.profile-actions {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 10px;
+}
+
+.edit-button,
+.save-button,
+.cancel-button {
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 12px 20px;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.edit-button,
+.save-button {
+  background: #4f46e5;
+
+  color: white;
+}
+
+.edit-button:hover,
+.save-button:hover {
+  background: #4338ca;
+
+  transform: translateY(-1px);
+}
+
+.cancel-button {
+  background: #f3f4f6;
+
+  color: #374151;
+}
+
+.cancel-button:hover {
+  background: #e5e7eb;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+  .profile-root {
+    padding: 24px 16px;
+  }
+
+  .profile-card {
+    padding: 24px;
+  }
+
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-page-header h2 {
+    font-size: 28px;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+  }
+
+}
+.avatar-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(80px, 1fr));
+
+  gap: 14px;
+
+  margin-top: 10px;
+}
+
+.avatar-option {
+  border: 2px solid transparent;
+
+  border-radius: 16px;
+
+  padding: 6px;
+
+  background: #fff;
+
+  cursor: pointer;
+
+  transition: .2s;
+}
+
+.avatar-option img {
+  width: 100%;
+
+  aspect-ratio: 1;
+
+  object-fit: cover;
+
+  border-radius: 12px;
+}
+
+.avatar-option:hover {
+  transform: translateY(-2px);
+
+  border-color: #c7d2fe;
+}
+
+.avatar-option.selected {
+  border-color: #4f46e5;
+
+  box-shadow:
+    0 0 0 4px rgba(79,70,229,.15);
 }

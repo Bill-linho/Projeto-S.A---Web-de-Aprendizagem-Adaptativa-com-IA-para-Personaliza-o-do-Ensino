@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import authLogin from '../../utils/loginFunctions.js'
-import Button from '../Button/Button.jsx'
+import authLogin from '../../../utils/loginFunctions.js'
+import Button from '../../Button/Button.jsx'
 import { useNavigate } from 'react-router-dom'
 
 

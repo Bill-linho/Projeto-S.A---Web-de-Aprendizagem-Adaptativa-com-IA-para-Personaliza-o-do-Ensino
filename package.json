@@ -6,5 +6,8 @@
     "BackEnd": "cd Back_End && npm run start",
     "FrontEnd": "cd Front_End && npm run dev",
     "Start-app": "concurrently \"npm run BackEnd\" \"npm run FrontEnd\""
+  },
+  "dependencies": {
+    "react-icons": "^5.6.0"
   }
 }

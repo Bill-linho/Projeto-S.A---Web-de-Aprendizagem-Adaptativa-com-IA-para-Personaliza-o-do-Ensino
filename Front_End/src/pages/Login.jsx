@@ -1,4 +1,4 @@
-import LoginCard from '../components/LoginCard/loginCard.jsx'
+import LoginCard from '../components/cards/LoginCard/loginCard.jsx'
 import Header from '../components/Header/header.jsx'
 import '../components/style/Login.css'
 

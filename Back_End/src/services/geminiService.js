@@ -1,14 +1,20 @@
 import { GoogleGenAI } from "@google/genai";
+import 'dotenv/config'
+
+// Validar se a API_CODE está configurada
+if (!process.env.API_CODE) {
+  throw new Error('API_CODE não está configurada. Por favor, defina a variável de ambiente API_CODE no arquivo .env');
+}
 
 const ai = new GoogleGenAI({
-apiKey: import.meta.env.VITE_API_CODE,
+  apiKey: process.env.API_CODE,
 });
 
 const chat = ai.chats.create({
-model: "gemini-2.5-flash",
+  model: "gemini-2.5-flash",
 });
 
-export async function perguntarGemini(pergunta){
+export async function perguntarGemini(pergunta) {
 const response = await chat.sendMessage({
 message: `
 Você é a MentorIA.

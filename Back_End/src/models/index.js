@@ -46,6 +46,13 @@ Conversa.hasMany(Mensagem, {
 Mensagem.belongsTo(Conversa, {
     foreignKey: "conversaId"
 });
+users.hasMany(trilha, {
+    foreignKey: 'userId'
+})
+
+trilha.belongsTo(users, {
+    foreignKey: 'userId'
+})
 
 export {
     users,

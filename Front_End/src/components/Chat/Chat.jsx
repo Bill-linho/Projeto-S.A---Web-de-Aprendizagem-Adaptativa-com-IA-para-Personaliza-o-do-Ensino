@@ -54,7 +54,7 @@ export default function Chat() {
         ...prev,
         {
           texto: resposta,
-          tipo: "ia",
+          tipo: "gemini",
         },
       ]);
     } catch (erro) {
@@ -64,7 +64,7 @@ export default function Chat() {
         ...prev,
         {
           texto: "Erro ao conversar com a IA.",
-          tipo: "ia",
+          tipo: "gemini",
         },
       ]);
     } finally {

@@ -8,26 +8,17 @@ export const trilha = sequelize.define('trilha',
             primaryKey: true,
             autoIncrement: true
         },
-        nome: { 
-            type: DataTypes.STRING, 
-            allowNull: false,
-        },
-        nivelAtual:{ 
-            type:DataTypes.ENUM(
+        nivelAtual: {
+            type: DataTypes.ENUM(
                 "INICIANTE",
                 "INTERMEDIARIO",
                 "AVANCADO"
             ),
-            defaultValue:"INICIANTE",
+            defaultValue: "INICIANTE",
             allowNull: false,
         },
-        nivelObjetivo:{ 
-            type:DataTypes.ENUM(
-                "INICIANTE",
-                "INTERMEDIARIO",
-                "AVANCADO"
-            ),
-            defaultValue:"INTERMEDIARIO",
-            allowNull: false,
-        },
+        usuarioId: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     });

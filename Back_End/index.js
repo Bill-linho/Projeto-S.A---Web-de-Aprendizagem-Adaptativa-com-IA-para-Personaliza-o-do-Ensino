@@ -2,22 +2,32 @@ import express from 'express'
 import sequelize from './src/config/database.js'
 import routerAuth from './src/routes/auth.router.js'
 import routerUser from './src/routes/user.router.js'
+import routerChat from './src/routes/chat.router.js'
 import 'dotenv/config'
 import { autenticar } from './src/middlewares/auth.middleware.js'
 import { corsOption } from './src/config/cors.js'
 import { helmetConfig } from './src/config/helmet.js'
-import { limitGlobal , limitLocal } from './src/config/rateLimit.js'
+import { limitGlobal, limitLocal } from './src/config/rateLimit.js'
+
+//Bancos - Remover após criar os controllers!
+
+import historicoAvaliacao from './src/models/historicoAvaliacao.js'
+import {historicoChat} from './src/models/historicoChat.js'
+import planoEstudo from './src/models/planoEstudo.js'
+import {trilha} from './src/models/trilha.js'
+
 
 const app = express()
 app.use(express.json());
 app.use(corsOption)
 app.use(helmetConfig)
 
-app.use('/auth',limitLocal, routerAuth)
-app.use('/user',limitGlobal, autenticar, routerUser)
+app.use('/auth', limitLocal, routerAuth)
+app.use('/user', limitGlobal, autenticar, routerUser)
+app.use('/chat', routerChat)
 
 
-sequelize.sync({alter: true}).then(() => {
+sequelize.sync({ alter: true }).then(() => {
     app.listen(process.env.SERVE_PORT, () => {
         console.log(`Servidor rodando em: localhost:${process.env.SERVE_PORT}`)
     })

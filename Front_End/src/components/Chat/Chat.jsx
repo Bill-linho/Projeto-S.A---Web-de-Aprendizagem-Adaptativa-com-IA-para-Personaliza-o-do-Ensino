@@ -18,7 +18,7 @@ export default function Chat() {
         setMensagens(
           historico.map((mensagem) => ({
             texto: mensagem.texto,
-            tipo: mensagem.autor === "usuario" ? "usuario" : "ia",
+            tipo: mensagem.autor === "usuario" ? "usuario" : "gemini",
           }))
         );
       } catch (erro) {

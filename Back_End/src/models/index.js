@@ -1,43 +1,60 @@
-import users from "../models/userModels.js"
+import { users } from "../models/userModels.js"
 import planoEstudo from "./planoEstudo.js"
-import trilha from "./trilha.js"
+import { trilha } from "./trilha.js"
 import historicoAvaliacao from "./historicoAvaliacao.js"
-import historicoChat from "./historicoChat.js"
+import { historicoChat } from "./historicoChat.js"
+import { Conversa } from "./conversa.js"
+import { Mensagem } from "./mensagem.js"
 
-users.hasMany(trilha,{
-    foreignkeys:"userId",
+
+users.hasMany(trilha, {
+    foreignkeys: "userId",
 })
 
-trilha.belongsTo(users,{
-    foreignkeys:"userId",
+trilha.belongsTo(users, {
+    foreignkeys: "userId",
 })
 
-trilha.hasMany(planoEstudo,{
-    foreignkeys:"trilhaId",
+trilha.hasMany(planoEstudo, {
+    foreignkeys: "trilhaId",
 })
 
-planoEstudo.belongsTo(trilha,{
-    foreignKey:"trilhaId",
+planoEstudo.belongsTo(trilha, {
+    foreignKey: "trilhaId",
 })
 
-trilha.hasMany(historicoAvaliacao,{
-    foreignKey:"trinhaId",
+trilha.hasMany(historicoAvaliacao, {
+    foreignKey: "trinhaId",
 })
 
-historicoAvaliacao.belongsTo(trilha,{
-    foreignKey:"trilhaId"
+historicoAvaliacao.belongsTo(trilha, {
+    foreignKey: "trilhaId"
 })
 
-users.hasMany(historicoChat,{
+users.hasMany(historicoChat, {
     foreignKey: "userId"
 })
 
 
-historicoChat.belongsTo(users,{
+historicoChat.belongsTo(users, {
     foreignKey: "userId"
+});
+Conversa.hasMany(Mensagem, {
+    foreignKey: "conversaId"
+});
+
+Mensagem.belongsTo(Conversa, {
+    foreignKey: "conversaId"
+});
+users.hasMany(trilha, {
+    foreignKey: 'userId'
 })
 
-export{
+trilha.belongsTo(users, {
+    foreignKey: 'userId'
+})
+
+export {
     users,
     trilha,
     planoEstudo,

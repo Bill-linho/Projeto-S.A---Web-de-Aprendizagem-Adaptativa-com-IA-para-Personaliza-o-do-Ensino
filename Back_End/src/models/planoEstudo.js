@@ -7,24 +7,28 @@ export const planoEstudo = sequelize.define('planoEstudo', {
         primaryKey: true,
         autoIncrement: true
     },
-    titulo:{
+    titulo: {
         type: DataTypes.STRING,
     },
-    descricao:{
+    descricao: {
         type: DataTypes.TEXT,
     },
-    TempoEstimado:{
+    TempoEstimado: {
         type: DataTypes.FLOAT,
     },
-    ordem:{
-        type:DataTypes.INTEGER
+    ordem: {
+        type: DataTypes.INTEGER
     },
-    progresso:{
+    progresso: {
         type: DataTypes.INTEGER,
         defaultValue: 0
     },
-    status:{
-        type: DataTypes.ENUM,
+    status: {
+        type: DataTypes.ENUM(
+            "NAO_INICIADO",
+            "EM_ANDAMENTO",
+            "CONCLUIDO"
+        ),
         defaultValue: "NAO_INICIADO"
     }
 })

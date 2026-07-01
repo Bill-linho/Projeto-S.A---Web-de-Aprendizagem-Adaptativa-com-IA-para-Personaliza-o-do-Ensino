@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import { perguntarGemini } from "../../services/geminiService.js";
+import { getMessages, sendMessage } from "../../services/chatService.js";
 import LogoRobo from "../Logo/roboManeiro.jsx";
 import '../style/Chat.css'
 
@@ -9,10 +9,31 @@ export default function Chat() {
   const [mensagens, setMensagens] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    async function carregarMensagens() {
+      try {
+        const response = await getMessages();
+        const historico = response.data || [];
+
+        setMensagens(
+          historico.map((mensagem) => ({
+            texto: mensagem.texto,
+            tipo: mensagem.autor === "usuario" ? "usuario" : "gemini",
+          }))
+        );
+      } catch (erro) {
+        console.error("Erro ao carregar mensagens:", erro);
+      }
+    }
+
+    carregarMensagens();
+  }, []);
+
   async function enviarMensagem() {
     if (!texto.trim()) return;
 
-    const pergunta = texto;
+    const pergunta = texto.trim();
+    if (!pergunta) return;
 
     setMensagens((prev) => [
       ...prev,
@@ -26,13 +47,14 @@ export default function Chat() {
     setLoading(true);
 
     try {
-      const resposta = await perguntarGemini(pergunta);
+      const response = await sendMessage({ pergunta });
+      const resposta = response.data?.resposta || "Erro ao conversar com a IA.";
 
       setMensagens((prev) => [
         ...prev,
         {
           texto: resposta,
-          tipo: "ia",
+          tipo: "gemini",
         },
       ]);
     } catch (erro) {
@@ -42,7 +64,7 @@ export default function Chat() {
         ...prev,
         {
           texto: "Erro ao conversar com a IA.",
-          tipo: "ia",
+          tipo: "gemini",
         },
       ]);
     } finally {

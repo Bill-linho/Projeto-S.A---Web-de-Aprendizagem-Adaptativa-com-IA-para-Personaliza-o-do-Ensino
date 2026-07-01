@@ -80,3 +80,19 @@ width: 1350px;
 .section-input-two input{
     width: 96.075%;
 }
+.sem-estudo {
+    min-height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+    text-align: center;
+}
+
+.sem-estudo p {
+    font-size: 1rem;
+    color: #173F7A;
+}

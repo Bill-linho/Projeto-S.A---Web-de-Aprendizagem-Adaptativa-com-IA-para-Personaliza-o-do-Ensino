@@ -10,5 +10,12 @@ export const sendMessage = (payload) => {
 
 export const getProfile = () => api.get('/user/me')
 export const updateProfile = (data) => api.put('/user/me', data)
-
-export default { getMessages, sendMessage, getProfile, updateProfile }
+export const criarChat =
+  (userId) =>
+    api.post(
+      "/chat/new",
+      {
+        userId
+      }
+    );
+export default { getMessages, sendMessage, getProfile, updateProfile, criarChat }

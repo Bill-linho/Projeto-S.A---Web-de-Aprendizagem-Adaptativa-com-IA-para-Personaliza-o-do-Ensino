@@ -26,6 +26,16 @@ export const Mensagem = sequelize.define(
     texto: {
       type: DataTypes.TEXT,
       allowNull: false
+    },
+    contexto: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+      allowNull: false
+    },
+    horario: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW
     }
   }
 );

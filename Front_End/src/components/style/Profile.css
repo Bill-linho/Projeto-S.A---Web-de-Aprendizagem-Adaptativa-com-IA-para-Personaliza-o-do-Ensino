@@ -160,7 +160,6 @@
     0 0 0 4px rgba(79, 70, 229, .15);
 }
 
-/* BOTÕES */
 
 .profile-actions {
   display: flex;
@@ -212,7 +211,6 @@
   background: #e5e7eb;
 }
 
-/* MOBILE */
 
 @media (max-width: 800px) {
 

@@ -1,0 +1,20 @@
+.aviso-card {
+    display: block;
+    text-align: center;
+}
+
+.aviso-card span {
+    color: black;
+    font-size: 26px;
+    
+}
+
+.aviso-card Button {
+    border: none;
+    border-radius: 12px;
+    padding: 20px 20px;
+    font-size: 15px;
+    font-weight: 900;
+    transition: .2s;
+    cursor: pointer;
+}

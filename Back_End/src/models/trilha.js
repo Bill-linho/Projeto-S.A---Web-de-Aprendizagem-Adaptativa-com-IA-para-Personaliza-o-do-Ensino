@@ -17,7 +17,15 @@ export const trilha = sequelize.define('trilha',
             defaultValue: "INICIANTE",
             allowNull: false,
         },
-        usuarioId: {
+        area: {
+            type: DataTypes.ENUM(
+                "LOGICA",
+                "FRONT-END",
+                "BACK-END"
+            )
+
+        },
+        userId: {
             type: DataTypes.INTEGER,
             allowNull: false
         }
